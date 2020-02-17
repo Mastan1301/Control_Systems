@@ -46,7 +46,7 @@ def routh_array(f):
     return {flag: r_array}
 
 #f holds the coefficients of the characteristic function
-f = np.array([1, -3, -1, 3]) #corresponding to H(s) = s^6 + 2s^5 + 8s^4 + 12s^3 + 20s^2 + 16s + 16
+f = np.array([1, 2, 8, 12, 20, 16, 16]) #corresponding to H(s) = s^6 + 2s^5 + 8s^4 + 12s^3 + 20s^2 + 16s + 16
 k = list(routh_array(f).keys())
 if k[0] == 1:
     print("Stable system")
