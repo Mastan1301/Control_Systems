@@ -1,3 +1,6 @@
+\begin{enumerate}[label=\thesubsection.\arabic*.,ref=\thesubsection.\theenumi]
+\numberwithin{equation}{enumi}
+
 A closed loop system has the characteristic equation given by \begin{align} s^3+Ks^2+(K+2)s+3 = 0 \end{align}For this system to be stable, which one of the following conditions should be satisfied? \\
 (A) 0 \(<\) K \(<\) 0.5 
 (B) 0.5 \(<\) K \(<\) 1 
@@ -31,33 +34,36 @@ Note that K cannot be negative.
 
 The program to compute the routh-array and stabilty for different values of K.
 \begin{lstlisting}
-    ./codes/ee18btech11039/routh_array.py
+    codes/ee18btech11039/routh_array.py
 \end{lstlisting}
 
 The program for plotting the poles of the system for different values of K.
 \begin{lstlisting}
-    ./codes/ee18btech11039/pole_plot.py
+    codes/ee18btech11039/pole_plot.py
 \end{lstlisting}
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 \begin{center}
-\includegraphics[scale = 0.5]{./figs/ee18btech11039_1.eps}
+\includegraphics[scale = 0.5]{ee18btech11039_1.eps}
 \end{center}
-\label{fig:ee18btech11039}
+\label{fig:ee18btech11039_1}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 \begin{center}
-\includegraphics[scale = 0.5]{./figs/ee18btech11039_2.eps}
+\includegraphics[scale = 0.5]{ee18btech11039_2.eps}
 \end{center}
-\label{fig:ee18btech11039}
+\label{fig:ee18btech11039_2}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 \begin{center}
-\includegraphics[scale = 0.5]{./figs/ee18btech11039_3.eps}
+\includegraphics[scale = 0.5]{ee18btech11039_3.eps}
 \end{center}
-\label{fig:ee18btech11039}
+\label{fig:ee18btech11039_3}
 \end{figure}
+
+\end{enumerate}
+
 
 
