@@ -1,6 +1,5 @@
 import numpy as np
 import math
-import matplotlib.pyplot as plt
 
 #Routh array algorithm
 
@@ -8,11 +7,11 @@ def computeRow(x):
     return (x[1][0]*x[0][1] - x[0][0]*x[1][1])/x[1][0]
 
 def routh_array(f):
+    global flag
     n = len(f)-1
     s1 = np.zeros((math.ceil(len(f)/2) + 1)) #1st two rows of the Routh array
     s2 = np.zeros((len(s1)))
     r_array = np.zeros((n+1, len(s1)))
-    flag = 1
 
     i = 0
     j = 0
@@ -45,23 +44,23 @@ def routh_array(f):
     if flag != 0 and index != 0:
         flag = 2     
 
-    return {flag: r_array}
+    return r_array
 
 k = [-3, 1, 2, 3]
 
 for i in k:
     f = np.array([1, i, i+2, 3])
-    d = routh_array(f)
-    key = list(d.keys())
+    flag = 1
+    arr = routh_array(f)
     print("For k =", i),
-    if key[0] == 1:
+    if flag == 1:
         print("Stable system")
-    elif key[0] == 2:
+    elif flag == 2:
         print("Marginally Stable system")
     else:
         print("Unstable system")
     
-    print("Routh array: \n", d[key[0]], "\n")
+    print("Routh array: \n", arr, "\n")
 
 
          
