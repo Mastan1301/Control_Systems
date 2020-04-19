@@ -1,12 +1,7 @@
 \begin{enumerate}[label=\thesubsection.\arabic*.,ref=\thesubsection.\theenumi]
 \numberwithin{equation}{enumi}
 
-A closed loop system has the characteristic equation given by \begin{align} s^3+Ks^2+(K+2)s+3 = 0 \end{align}For this system to be stable, which one of the following conditions should be satisfied? \\
-(A) 0 \(<\) K \(<\) 0.5 
-(B) 0.5 \(<\) K \(<\) 1 
-(C) 0 \(<\) K \(<\) 1 
-(D) K \(>\) 1 \\
-
+A closed loop system has the characteristic equation given by \begin{align} s^3+Ks^2+\brak{K+2}s+3 = 0 \end{align}Determine the condition for K for which the system is stable.\\
 \solution
 Computing the Routh array for the given characteristic equation, we get-
 
@@ -17,14 +12,14 @@ Computing the Routh array for the given characteristic equation, we get-
 
 According to the Routh-Hurwitz stability criterion, for the system to be stable there should be no sign changes in the first column of the Routh array. That means-
 \begin{align}
-    K > 0 \ \texttt{and} \ \frac{K^2+2K-3}{K} > 0 
+    K > 0 \text{ and } \frac{K^2+2K-3}{K} > 0 
 \end{align}
 \begin{align}
-\Rightarrow K > 0 \ \texttt{and} \ (K-1)(K+3) > 0 
+\Rightarrow K > 0 \text{ and } \brak{K-1}\brak{K+3} > 0 
 \end{align}
 which gives us 
 \begin{align}
-    K > 0 \ \texttt{and} \ (K > 1 \ \texttt{or} \ K < -3).
+    K > 0 \text{ and } \brak{K > 1 \text{ or } K < -3}.
 \end{align}
 Note that K cannot be negative.
 
@@ -42,21 +37,22 @@ The program for plotting the poles of the system for different values of K.
     codes/ee18btech11039/pole_plot.py
 \end{lstlisting}
 
-\begin{figure}[!htb]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[scale = 0.5]{ee18btech11039_1.eps}
+\caption{Pole plots for different values of K}
 \end{center}
 \label{fig:ee18btech11039_1}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[scale = 0.5]{ee18btech11039_2.eps}
 \end{center}
 \label{fig:ee18btech11039_2}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[scale = 0.5]{ee18btech11039_3.eps}
 \end{center}
@@ -64,6 +60,4 @@ The program for plotting the poles of the system for different values of K.
 \end{figure}
 
 \end{enumerate}
-
-
 
