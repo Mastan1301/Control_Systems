@@ -1,7 +1,7 @@
 \begin{enumerate}[label=\thesubsection.\arabic*.,ref=\thesubsection.\theenumi]
 \numberwithin{equation}{enumi}
 
-A closed loop system has the characteristic equation given by \begin{align} s^3+Ks^2+\brak{K+2}s+3 = 0 \end{align}Determine the condition for K for which the system is stable.\\
+\item A closed loop system has the characteristic equation given by \begin{align} s^3+Ks^2+\brak{K+2}s+3 = 0 \end{align}Determine the condition for K for which the system is stable.\\
 \solution
 Computing the Routh array for the given characteristic equation, we get-
 
@@ -12,52 +12,16 @@ Computing the Routh array for the given characteristic equation, we get-
 
 According to the Routh-Hurwitz stability criterion, for the system to be stable there should be no sign changes in the first column of the Routh array. That means-
 \begin{align}
-    K > 0 \text{ and } \frac{K^2+2K-3}{K} > 0 
-\end{align}
-\begin{align}
-\Rightarrow K > 0 \text{ and } \brak{K-1}\brak{K+3} > 0 
-\end{align}
-which gives us 
-\begin{align}
-    K > 0 \text{ and } \brak{K > 1 \text{ or } K < -3}.
-\end{align}
-Note that K cannot be negative.
-
-\begin{align}
-\Rightarrow K > 1 
+    K > 0 \text{ and } \frac{K^2+2K-3}{K} > 0 \\
+    \Rightarrow K > 0 \text{ and } \brak{K-1}\brak{K+3} > 0 \\
+    K > 0 \text{ and } \brak{K > 1 \text{ or } K < -3} \\
+    \Rightarrow K > 1 \\
 \end{align}
 
 The program to compute the routh-array and stabilty for different values of K.
 \begin{lstlisting}
     codes/ee18btech11039/routh_array.py
 \end{lstlisting}
-
-The program for plotting the poles of the system for different values of K.
-\begin{lstlisting}
-    codes/ee18btech11039/pole_plot.py
-\end{lstlisting}
-
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[scale = 0.5]{ee18btech11039_1.eps}
-\caption{Pole plots for different values of K}
-\end{center}
-\label{fig:ee18btech11039_1}
-\end{figure}
-
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[scale = 0.5]{ee18btech11039_2.eps}
-\end{center}
-\label{fig:ee18btech11039_2}
-\end{figure}
-
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[scale = 0.5]{ee18btech11039_3.eps}
-\end{center}
-\label{fig:ee18btech11039_3}
-\end{figure}
 
 \end{enumerate}
 
