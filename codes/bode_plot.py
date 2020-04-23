@@ -93,21 +93,21 @@ y = asymptoticPlotMag(x, pz)
 phi = asymptoticPlotPhase(x1, pz)
 
 plt.figure()
-plt.subplot(2, 1, 1)
+plt.subplot(2, 1, 1) #Magnitude plot
 plt.xlabel("$w$")
 plt.ylabel("20$log_{10}(|H(jw)|$")
 plt.title("Magnitude Plot")
-plt.semilogx(w, mag)    # Using in-built function
+plt.semilogx(w, mag) # Using in-built function   
 
 plt.semilogx(x, y) # Theoretical plot
 plt.legend(["Using in-built function" , "Asymptotic Plot"])
 plt.grid()
 
-plt.subplot(2, 1, 2)
+plt.subplot(2, 1, 2) # Magnitude plot
 plt.xlabel("$w$")
 plt.ylabel("$\phi(j\omega)$")
 plt.title("Phase Plot")
-plt.semilogx(w, phase)    # Using in-built function
+plt.semilogx(w, phase)   # Using in-built function
 
 plt.semilogx(x1, phi) # Theoretical plot
 plt.legend(["Using in-built function" , "Asymptotic Plot"])
