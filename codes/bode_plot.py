@@ -53,13 +53,13 @@ for i in range(len(pz)):
     for j in range(len(pz[i])):
         x.append(abs(pz[i][j]))
 
-x.append(1e4)
-x.sort() # w-axis for drawing the theoretical asymptotic plot
+x.append(w[-1]) # appending the upper limit of w
+x.sort() # x-axis for drawing the theoretical asymptotic plot
 y = asymptoticPlot(x, pz)
 
 plt.figure()
-plt.xlabel("f")
-plt.ylabel("H(f)")
+plt.xlabel("$w$")
+plt.ylabel("20$log_{10}(|H(jw)|$")
 plt.title("Bode Plot")
 plt.semilogx(w, mag)    # Using in-built function
 
@@ -68,7 +68,7 @@ plt.legend(["Using in-built function" , "Asymptotic Plot"])
 plt.grid()
 plt.show()
 
-''' if using termux
+''' #if using termux
 plt.savefig('./figs/ee18btech11001/ee18btech11001_2.pdf')
 plt.savefig('./figs/ee18btech11001/ee18btech11001_2.eps')
 subprocess.run(shlex.split("termux-open ./figs/ee18btech11001/ee18btech11001_2.pdf"))'''
