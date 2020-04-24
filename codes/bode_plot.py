@@ -72,11 +72,11 @@ def asymptoticPlotPhase(x, pz):
 
 num = [0.2*0.025, 0.225, 1]
 den = [0.005*0.001, 0.006, 1, 0, 0, 0]
-s1 = signal.lti(num,den)
+G = signal.lti(num,den)
 pz = CalculatePolesAndZeros(num, den)
 print("Zeros: ", pz[0])
 print("Poles: ", pz[1])
-w, mag, phase = signal.bode(s1)
+w, mag, phase = signal.bode(G)
 
 x = []
 for i in range(len(pz)):
