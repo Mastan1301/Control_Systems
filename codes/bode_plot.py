@@ -91,9 +91,8 @@ for i in range(len(phase)):
         index_2 = i
         break
     
-
-print('Gain Margin: ', mag[index])
-print('Phase Margin: ', phase[index_2])
+print('Gain Margin: ', mag[index], ', Phase cross-over frequency: ', w[index])
+print('Phase Margin: ', phase[index_2], ', Gain cross-over frequency: ', w[index_2])
 
 x = []
 for i in range(len(pz)):
@@ -109,31 +108,33 @@ x1.append(w[-1]) # appending the upper limit of w
 y = asymptoticPlotMag(x, pz)
 phi = asymptoticPlotPhase(x1, pz)
 
+#Magnitude plot
 plt.figure()
-plt.subplot(2, 1, 1) #Magnitude plot
-plt.xlabel("$w$")
-plt.ylabel("20$log_{10}(|H(jw)|$")
+plt.subplot(2, 1, 1) 
+plt.xlabel("$\omega$")
+plt.ylabel("20$log_{10}(|H(j\omega)|$")
 plt.title("Magnitude Plot")
-plt.semilogx(w, mag) # Using in-built function   
-
+plt.semilogx(w, mag) # Using in-built function 
 plt.semilogx(x, y) # Theoretical plot
 plt.legend(["Using in-built function" , "Asymptotic Plot"])
 plt.axhline(y = 0, xmin = 0, xmax = w[index_2], color = 'r',linestyle='dashed')
 plt.axvline(x = w[index_2], ymin = 0, color = 'r',linestyle='dashed')
 plt.plot(w[index_2], mag[index_2], 'o')
+plt.text(w[index_2]+0.5, mag[index_2]+2, '({}, {})'.format(1, 0))
 plt.grid()
 
-plt.subplot(2, 1, 2) # Phase plot
-plt.xlabel("$w$")
+# Phase plot
+plt.subplot(2, 1, 2) 
+plt.xlabel("$\omega$")
 plt.ylabel("$\phi(j\omega)$")
 plt.title("Phase Plot")
 plt.semilogx(w, phase)   # Using in-built function
-
 plt.semilogx(x1, phi) # Theoretical plot
 plt.legend(["Using in-built function" , "Asymptotic Plot"])
 plt.axhline(y = 180, xmin = 0, xmax = w[index], color = 'r',linestyle='dashed')
 plt.axvline(x = w[index], ymin = 0, ymax = 180, color = 'r',linestyle='dashed')
 plt.plot(w[index], phase[index], 'o')
+plt.text(w[index]+0.5, phase[index]-10, '({}, {})'.format(16.29, 180))
 plt.grid()
 
 plt.show()
