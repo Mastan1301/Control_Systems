@@ -78,6 +78,23 @@ print("Zeros: ", pz[0])
 print("Poles: ", pz[1])
 w, mag, phase = signal.bode(G)
 
+tolerance = 0.5
+index = 0
+index_2 = 0
+for i in range(len(phase)):
+    if(abs(phase[i]-180) <= tolerance):
+        index = i
+        break
+
+for i in range(len(phase)):
+    if(abs(mag[i]-0) <= tolerance):
+        index_2 = i
+        break
+    
+
+print('Gain Margin: ', mag[index])
+print('Phase Margin: ', phase[index_2])
+
 x = []
 for i in range(len(pz)):
     for j in range(len(pz[i])):
@@ -101,9 +118,12 @@ plt.semilogx(w, mag) # Using in-built function
 
 plt.semilogx(x, y) # Theoretical plot
 plt.legend(["Using in-built function" , "Asymptotic Plot"])
+plt.axhline(y = 0, xmin = 0, xmax = w[index_2], color = 'r',linestyle='dashed')
+plt.axvline(x = w[index_2], ymin = 0, color = 'r',linestyle='dashed')
+plt.plot(w[index_2], mag[index_2], 'o')
 plt.grid()
 
-plt.subplot(2, 1, 2) # Magnitude plot
+plt.subplot(2, 1, 2) # Phase plot
 plt.xlabel("$w$")
 plt.ylabel("$\phi(j\omega)$")
 plt.title("Phase Plot")
@@ -111,6 +131,9 @@ plt.semilogx(w, phase)   # Using in-built function
 
 plt.semilogx(x1, phi) # Theoretical plot
 plt.legend(["Using in-built function" , "Asymptotic Plot"])
+plt.axhline(y = 180, xmin = 0, xmax = w[index], color = 'r',linestyle='dashed')
+plt.axvline(x = w[index], ymin = 0, ymax = 180, color = 'r',linestyle='dashed')
+plt.plot(w[index], phase[index], 'o')
 plt.grid()
 
 plt.show()
