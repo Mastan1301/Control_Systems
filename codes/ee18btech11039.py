@@ -138,8 +138,6 @@ plt.plot(w[index], phase[index], 'o')
 plt.text(w[index]+0.5, phase[index]-10, '({}, {})'.format(16.29, 180))
 plt.grid()
 
-plt.show()
-
 ''' #if using termux
 plt.savefig('./figs/ee18btech11039/ee18btech11039.pdf')
 plt.savefig('./figs/ee18btech11039/ee18btech11039.eps')
