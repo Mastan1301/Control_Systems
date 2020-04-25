@@ -113,7 +113,7 @@ phi = asymptoticPlotPhase(x1, pz)
 plt.figure()
 plt.subplot(2, 1, 1) 
 plt.xlabel("$\omega$")
-plt.ylabel("20$log_{10}(|H(j\omega)|$")
+plt.ylabel("20$log_{10}(|G(j\omega)|$")
 plt.title("Magnitude Plot")
 plt.semilogx(w, mag) # Using in-built function 
 plt.semilogx(x, y) # Theoretical plot
