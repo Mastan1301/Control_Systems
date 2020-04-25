@@ -78,6 +78,7 @@ print("Zeros: ", pz[0])
 print("Poles: ", pz[1])
 w, mag, phase = signal.bode(G)
 
+# finding gain and phase margins
 tolerance = 0.5
 index = 0
 index_2 = 0
@@ -92,7 +93,7 @@ for i in range(len(phase)):
         break
     
 print('Gain Margin: ', mag[index], ', Phase cross-over frequency: ', w[index])
-print('Phase Margin: ', phase[index_2], ', Gain cross-over frequency: ', w[index_2])
+print('Phase Margin: ', phase[index_2]+180, ', Gain cross-over frequency: ', w[index_2])
 
 x = []
 for i in range(len(pz)):
