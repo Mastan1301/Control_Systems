@@ -1,0 +1,16 @@
+\begin{circuitikz}[american]
+    \ctikzset{tripoles/mos style/arrows}
+    \draw  (0,0)--(2,0) to[resistor, l_ = $2K\ohm$, v^= $R_i$](2, -3) to[short](2, -5);
+    \draw (0, 0) to[V, l = $V_i$, *-*] (0, -5);
+    \draw (2,-5)--(3, -5)to[cV, l_ = $0.1V_o$, v^>=$HV_o$] (3, -7)--(2, -7)--(0, -7)--(0, -5);
+    
+    \draw (10, 0) to[short](7, 0) to[resistor, l_ = $2K\ohm$, v^>= $R_o$] (5, 0) to[cV, l_ = $1000V_i$, v^>=$GV_i$] (5, -3)--(10, -3) to[open, v^<=$V_o$, *-*] (10, 0);
+    \draw (9, 0)--(9, -5)--(5, -5) to[open, v^>=$V_o$, *-*] (5, -7)--(9.5, -7)--(9.5, -3)
+    
+    \draw[dashed] (2.3, -4.5)--(6.5, -4.5)--(6.5, -7.5)--(2.3, -7.5)--(2.3, -4.5);
+    
+    \draw[dashed] (1.6, 0.5)--(7, 0.5)--(7, -2.5)--(1.6, -2.5)--(1.6, 0.5)
+    (4, 0.5) node[above]{G-circuit}
+    (4.5, -4.5) node[above]{H-circuit}
+    ;
+    \end{circuitikz}
