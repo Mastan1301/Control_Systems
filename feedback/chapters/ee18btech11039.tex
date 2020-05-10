@@ -1,0 +1,49 @@
+\begin{enumerate}[label=\thesubsection.\arabic*.,ref=\thesubsection.\theenumi]
+    \numberwithin{equation}{enumi}
+    \numberwithin{figure}{enumi}
+
+    \item A series-shunt feedback amplifier employs a basic amplifier with input and output resistances each of $2K\Omega$ and
+    gain G = 1000V/V. The feedback factor H = 0.1V/V. Find the input resistance $R_{if}$, output resistance $R_{of}$ and gain 
+    of the closed-loop amplifier. \\
+    
+\solution 
+For given data, see Table:\ref{table:ee18btech11039_table}.
+For feedback-amplifier circuit and equivalent circuit, see fig:\ref{fig:ee18btech11039_fig1} and \ref{fig:ee18btech11039_fig2}
+
+\begin{table}[!h]
+\centering
+\input{./tables/ee18btech11039_table.tex}
+\caption{}
+\label{table:ee18btech11039_table}
+\end{table}
+
+\begin{figure}[!htb]
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11039/fig1.tex}}
+\caption{Ideal structure}
+\label{fig:ee18btech11039_fig1}
+\end{figure}
+
+\begin{figure}[!htb]
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11039/fig2.tex}}
+\caption{Equivalent circuit}
+\label{fig:ee18btech11039_fig2}
+\end{figure}
+
+Closed-loop gain,
+\begin{align}
+    T = \frac{G}{1+GH}
+      = 9.9
+\end{align}
+
+\text{Input resistance,}
+\begin{align}
+    R_{if} = \brak{1+GH} R_i
+    = 202K\Omega
+\end{align}
+
+\text{Output resistance,} 
+\begin{align}
+    R_{of} = \frac{R_o}{1+GH}
+           = 19.802\Omega
+\end{align}
+\end{enumerate}
