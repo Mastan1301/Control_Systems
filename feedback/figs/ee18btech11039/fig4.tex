@@ -1,0 +1,10 @@
+\begin{circuitikz}[american]
+    \ctikzset{tripoles/mos style/arrows}
+    \draw (0, 0)to[resistor, l = $R_s$] (4, 0)to[resistor, l = $R_{id}$, v>=$V_1$] (4, -2)to[resistor, l = \mbox{$R_{11} = (R_1||R_2)$}](0, -2);
+    %\draw (1.7, -2.1)node[anchor = north]{$R_{11} = (R_1||R_2)$};
+    \draw (0, 0)to[open, v>= $V_i$, *-*] (0, -2);
+    \draw (14, 0)node[circle,fill,inner sep=2pt, label = right:$V_o$]{}--(12, 0)to[resistor, l = \mbox{$R_{22} = (R_1+R_2)$}](12, -2)node[ground]{};
+    \draw (12, 0)--(10, 0)to[resistor, l = $R_L$](10, -2)node[ground]{};
+    \draw (10, 0)to[resistor, l = $r_o$](7, 0)to[cV, l = $\mu V_1$](7, -2)node[ground]{};
+    ;
+    \end{circuitikz}
