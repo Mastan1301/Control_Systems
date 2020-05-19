@@ -93,11 +93,23 @@ Open-loop output resistance,
       R_o = r_o || R_L || \brak{R_2 + R_1} = 2K\ohm
 \end{align}
 
-
+In fig.\ref{fig:ee18btech11039_fig6}, 
+\begin{align}
+    V_{in}\brak{t} = sin\brak{2000\pi t}
+\end{align}
+\begin{align}
+    V_{o}\brak{t} = 9.9&sin\brak{2000\pi t}
+\end{align}
 \begin{figure}[!h]
 		\includegraphics[width=\columnwidth]{./figs/ee18btech11039/spice_1.eps}
-\caption{Steady-state output of the simulation}
+\caption{Time domain output of the simulation}
 \label{fig:ee18btech11039_fig6}
+\end{figure}
+
+\begin{figure}[!h]
+		\includegraphics[width=\columnwidth]{./figs/ee18btech11039/spice_2.eps}
+\caption{AC analysis, f = 1Hz to 100MHz}
+\label{fig:ee18btech11039_fig7}
 \end{figure}
 
 \end{enumerate}
