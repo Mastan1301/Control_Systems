@@ -25,6 +25,6 @@ plt.grid()
 #if using termux
 plt.savefig('./figs/ee18btech11039/spice_1.pdf')
 plt.savefig('./figs/ee18btech11039/spice_1.eps')
-subprocess.run(shlex.split("termux-open ./figs/ee18btech11039/spice_1.pdf"))
+#subprocess.run(shlex.split("termux-open ./figs/ee18btech11039/spice_1.pdf"))
 #else
-#plt.show()
+plt.show()

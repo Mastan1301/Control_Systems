@@ -1,40 +1,39 @@
 OPMODEL1.CIR - OPAMP MODEL SINGLE-POLE
-*
-VS	8	0	AC	1  SIN(0VOFF 1VPEAK  1KHZ)
-XOP	1 0	3	OPAMP1
-RS	8	1	100
-RL	3	0	3.33K
+
+VS	1	0	AC	1  SIN(0VOFF 1VPEAK  1KHZ)
+
+* INPUT AND OUTPUT TERMINALS OF OP-AMP
+XOP	3 4	6	OPAMP1
+
+RS	1	3	100
+Rid 3   4   1K
+RL	6	0	3.33K
 
 * FEEDBACK LOOP
-R2	3	7	9K
-R1	7	0	1K
+R2	6	4	9K
+R1	4	0	1K
 
-*
+
 * OPAMP MACRO MODEL, SINGLE-POLE
 * connections:      non-inverting input
 *                   |   inverting input
 *                   |   |   output
 *                   |   |   |
-.SUBCKT OPAMP1	    1   2   6
-* INPUT IMPEDANCE
-RIN	1	7	1K
+.SUBCKT OPAMP1	    3   4   6
 * DC GAIN=10K
-EGAIN	3 0	1 2	10K
-RP1	3	4	1K
-CP1	4	0	33UF
+EGAIN	5 0	3 4	10K
 
-* OUTPUT BUFFER AND RESISTANCE
-EBUFFER	5 0	4 0	1
-ROUT	5	6	10K
+* OUTPUT RESISTANCE
+RO	5	6	10K
 .ENDS
 *
 * ANALYSIS
-.TRAN 	1US  150MS
-*.PLOT	AC 	VM(3)
+.TRAN 	1US  10MS
+
 .CONTROL
 RUN
-WRDATA input.dat V(8)
-WRDATA output.dat V(3)
+WRDATA input.dat V(1)
+WRDATA output.dat V(6)
 .ENDC
 
 .END
