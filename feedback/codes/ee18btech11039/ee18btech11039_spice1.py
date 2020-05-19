@@ -16,7 +16,6 @@ plt.ylabel("$V_{in}(t)$")
 plt.grid()
 
 plt.subplot(2, 1, 2)
-#plotting the steady state values
 plt.plot(dout[:, 0], dout[:, 1])
 plt.xlabel("t");
 plt.ylabel("$V_{o}(t)$")
@@ -25,6 +24,6 @@ plt.grid()
 #if using termux
 plt.savefig('./figs/ee18btech11039/spice_1.pdf')
 plt.savefig('./figs/ee18btech11039/spice_1.eps')
-#subprocess.run(shlex.split("termux-open ./figs/ee18btech11039/spice_1.pdf"))
+subprocess.run(shlex.split("termux-open ./figs/ee18btech11039/spice_1.pdf"))
 #else
-plt.show()
+#plt.show()
