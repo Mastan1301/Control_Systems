@@ -7,17 +7,17 @@ import shlex
 #end if
 
 din, dout = np.loadtxt('./codes/ee18btech11039/input.dat'), np.loadtxt('./codes/ee18btech11039/output.dat')  
-start = int(0.9 * len(din))
+
 plt.figure()
 plt.subplot(2, 1, 1)
-plt.plot(din[start:, 0], din[start:, 1])
+plt.plot(din[:, 0], din[:, 1])
 plt.xlabel("t");
 plt.ylabel("$V_{in}(t)$")
 plt.grid()
 
 plt.subplot(2, 1, 2)
 #plotting the steady state values
-plt.plot(dout[start:, 0], dout[start:, 1])
+plt.plot(dout[:, 0], dout[:, 1])
 plt.xlabel("t");
 plt.ylabel("$V_{o}(t)$")
 plt.grid()

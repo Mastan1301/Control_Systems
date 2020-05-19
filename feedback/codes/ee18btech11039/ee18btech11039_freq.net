@@ -1,0 +1,38 @@
+* AC ANALYSIS
+
+VS	1	0	AC	1  SIN(0VOFF 1VPEAK  1KHZ)
+
+* INPUT AND OUTPUT TERMINALS OF OP-AMP
+XOP	3 4	6	OPAMP1
+
+RS	1	3	100
+Rid 3   4   1K
+RL	6	0	3.33K
+
+* FEEDBACK LOOP
+R2	6	4	9K
+R1	4	0	1K
+
+
+* OPAMP MACRO MODEL, SINGLE-POLE
+* connections:      non-inverting input
+*                   |   inverting input
+*                   |   |   output
+*                   |   |   |
+.SUBCKT OPAMP1	    3   4   6
+* GAIN (mu) = 10K
+EGAIN	5 0	3 4	10K
+
+* OUTPUT RESISTANCE
+RO	5	6	10K
+.ENDS
+*
+* ANALYSIS
+.AC 	DEC 	5 1 100MEG
+
+.CONTROL
+RUN
+WRDATA ratio.dat V(6)/V(1)
+.ENDC
+
+.END
