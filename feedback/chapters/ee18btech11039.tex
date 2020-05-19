@@ -95,21 +95,30 @@ Open-loop output resistance,
 
 In fig.\ref{fig:ee18btech11039_fig6}, 
 \begin{align}
-    V_{in}\brak{t} = sin\brak{2000\pi t}
+    V_{in}\brak{t} = \sin\brak{2000\pi t}
 \end{align}
 \begin{align}
-    V_{o}\brak{t} = 9.9&sin\brak{2000\pi t}
+    V_{o}\brak{t} = 9.9\sin\brak{2000\pi t}
 \end{align}
+
 \begin{figure}[!h]
 		\includegraphics[width=\columnwidth]{./figs/ee18btech11039/spice_1.eps}
 \caption{Time domain output of the simulation}
 \label{fig:ee18btech11039_fig6}
 \end{figure}
 
+The output in fig:\ref{fig:ee18btech11039_fig6} is obtained by running the following program-
+\begin{lstlisting}
+/codes/ee18btech11039/ee18btech11039_spice1.py
+\end{lstlisting}
 \begin{figure}[!h]
 		\includegraphics[width=\columnwidth]{./figs/ee18btech11039/spice_2.eps}
 \caption{AC analysis, f = 1Hz to 100MHz}
 \label{fig:ee18btech11039_fig7}
 \end{figure}
-
+ 
+The output in fig:\ref{fig:ee18btech11039_fig7} is obtained by running the following program-
+\begin{lstlisting}
+/codes/ee18btech11039/ee18btech11039_spice2.py
+\end{lstlisting}
 \end{enumerate}
