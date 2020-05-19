@@ -11,7 +11,7 @@ print(T.shape)
 plt.figure()
 plt.plot(T[:, 0], T[:, 1])
 plt.xlabel("f");
-plt.ylabel("$V_{o}/V_{in}$")
+plt.ylabel("$V_{o}/V_{s}$")
 plt.grid()
 
 #if using termux
