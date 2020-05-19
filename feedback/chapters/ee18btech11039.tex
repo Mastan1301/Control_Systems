@@ -95,10 +95,15 @@ Open-loop output resistance,
 
 In fig.\ref{fig:ee18btech11039_fig6}, 
 \begin{align}
-    V_{in}\brak{t} = \sin\brak{2000\pi t}
+    V_{s}\brak{t} = \sin\brak{2000\pi t} \\
+    \Rightarrow V_{s}\brak{s} = \frac{2000\pi}{s^2 + \brak{2000\pi}^2}
 \end{align}
 \begin{align}
-    V_{o}\brak{t} = 9.9\sin\brak{2000\pi t}
+    V_{o}\brak{t} = 9.9\sin\brak{2000\pi t}\\
+    \Rightarrow V_{o}\brak{s} = \frac{9.9\brak{2000\pi}}{s^2 + \brak{2000\pi}^2}
+\end{align}
+\begin{align}
+    T = \left|\frac{V_o\brak{s}}{V_{s}\brak{s}}\right| = 9.9
 \end{align}
 
 \begin{figure}[!h]
@@ -106,6 +111,8 @@ In fig.\ref{fig:ee18btech11039_fig6},
 \caption{Time domain output of the simulation}
 \label{fig:ee18btech11039_fig6}
 \end{figure}
+
+The plot in fig:\ref{fig:ee18btech11039_fig7} verifies that the value of T for the circuit is constant for various values of frequencies, $f \in \brak{1, 10^8}$.\\
 
 The output in fig:\ref{fig:ee18btech11039_fig6} is obtained by running the following program-
 \begin{lstlisting}
