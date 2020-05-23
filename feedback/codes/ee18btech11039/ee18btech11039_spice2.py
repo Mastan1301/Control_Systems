@@ -10,7 +10,7 @@ T = np.loadtxt('./codes/ee18btech11039/ratio.dat')
 print(T.shape)
 plt.figure()
 plt.plot(T[:, 0], T[:, 1])
-plt.xlabel("f");
+plt.xlabel("f")
 plt.ylabel("$V_{o}/V_{s}$")
 plt.grid()
 
