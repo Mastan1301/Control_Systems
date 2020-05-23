@@ -11,7 +11,7 @@ din, dout = np.loadtxt('./codes/ee18btech11039/input.dat'), np.loadtxt('./codes/
 plt.figure()
 plt.subplot(2, 1, 1)
 plt.plot(din[:, 0], din[:, 1])
-plt.xlabel("t");
+plt.xlabel("t")
 plt.ylabel("$V_{s}(t)$")
 plt.grid()
 
