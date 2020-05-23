@@ -17,7 +17,7 @@ plt.grid()
 
 plt.subplot(2, 1, 2)
 plt.plot(dout[:, 0], dout[:, 1])
-plt.xlabel("t");
+plt.xlabel("t")
 plt.ylabel("$V_{o}(t)$")
 plt.grid()
 
